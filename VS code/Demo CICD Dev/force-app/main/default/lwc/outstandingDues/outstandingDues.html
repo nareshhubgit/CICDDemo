@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title ="OutStanding Fare">
+         <template if:true={avgActualFare}>
+         <p><b><lightning-formatted-number value={avgActualFare} format-style="currency" currency-code="INR">
+         </lightning-formatted-number></b></p>
+     </template>
+     <template if:false={avgActualFare}>
+         <p><b><lightning-formatted-number value=0 format-style="currency" currency-code="INR">
+         </lightning-formatted-number></b></p>
+     </template>
+     </lightning-card>
+ </template>

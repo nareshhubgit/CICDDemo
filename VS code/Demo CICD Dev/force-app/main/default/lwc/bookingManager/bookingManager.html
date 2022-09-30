@@ -1,0 +1,21 @@
+<template>
+    
+    <c-hub-search onbuttonclick={handleEvent}></c-hub-search>
+    <lightning-card title="Quick Booking">
+        <lightning-record-edit-form object-api-name={booking} onsuccess={handleOnBooking} onerror={handleOnError}>
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name={customer}></lightning-input-field>
+                    <lightning-input-field field-name={bike} value={rowvalue}></lightning-input-field>
+                    <lightning-input-field field-name={distance}></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name={starthub}></lightning-input-field>
+                    <lightning-input-field field-name={endhub}></lightning-input-field>
+                </div>
+            </div>
+            <lightning-button type="submit" variant="brand" label="Create Booking"></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

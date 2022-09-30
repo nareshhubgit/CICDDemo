@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Bikes available in hub">
+        <lightning-input type="text" value={searchKey} label="Enter Hub Name" onchange={handleKeyChange}></lightning-input>
+        <lightning-button label="Find" onclick={handleOnClick} variant="brand" class="slds-align_absolute-center"></lightning-button >
+    </lightning-card>
+    <template if:true={bikeList}>
+        <lightning-datatable
+            data={bikeList}
+            columns={columns}
+            key-field="Id"
+            onrowaction={handleClick}>
+        </lightning-datatable>
+    </template>
+</template>

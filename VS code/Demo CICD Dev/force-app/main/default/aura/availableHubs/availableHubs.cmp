@@ -1,0 +1,44 @@
+<aura:component controller="availableHubs" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="hubsList" type="Hub__c[]"/>
+    <article class="slds-card">
+        <div class="slds-card__body">
+            <table class="slds-table slds-table_bordered slds-no-row-hover slds-table_cell-buffer">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Name">Name</div>
+                        </th>
+                        
+                        <th scope="col">
+                            <div class="slds-truncate" title="Rating">Rating</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Active">Active</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.hubsList}" var="hubs">
+                        <tr style="{!'background-color:'+hubs.style_Class__c}">
+ 							
+                           <th>
+                               <a href="{!'/one/one.app?#/sObject/'+ hubs.Id + '/view'}" target="_blank">{!hubs.Name}</a>
+                               <!--
+                            <a target="_blank" href="" onclick="{!c.displayDetails}" data-taskid="{!hubs.Id}">{!hubs.Name}</a>-->
+                            <!--<a target="_blank" data-id="{!hubs.Id}" onclick="{!c.displayDetails}">{!hubs.Name}</a>-->
+                            </th>
+                            
+                            <td>
+                                <div class="slds-truncate" title="{!hubs.Rating__c}">{!hubs.Rating_c}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title="{!hubs.Active__c}">{!hubs.Active_c}</div>
+                            </td>
+                        </tr>                     
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</aura:component>

@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Hub Status ">
+        <div class="slds-m-bottom_small slds-align_absolute-center">
+            <lightning-progress-ring
+                value={inActive}
+                variant="expired"
+                size="large"
+            ></lightning-progress-ring>
+            <span class="slds-m-right_small " >
+                -Inactive Bikes  : {inActive}
+            </span>
+        </div>
+ 
+        <div class="slds-m-bottom_small slds-align_absolute-center">
+            <lightning-progress-ring
+                value={serviceCount}
+                variant="base"
+                size="large"
+            ></lightning-progress-ring>
+            <span class="slds-m-right_small ">
+               - Current Bookings : {serviceCount}
+            </span>
+        </div>
+
+        <div class="slds-m-bottom_small slds-align_absolute-center">
+            
+                <lightning-progress-ring
+                value={dueCount}
+                variant="warning"
+                size="large"
+            ></lightning-progress-ring>
+            <span class="slds-m-right_small ">
+                -Maintenance Pending   : {dueCount}
+            </span>
+        </div>
+   
+    </lightning-card>
+</template>
