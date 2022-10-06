@@ -1,0 +1,28 @@
+<aura:component controller="bookings" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="bookingList" type="Booking__c[]"/>
+    <lightning:card title="Bikes and Respective Booking Details">
+        <div class="slds-m-around_x-large">
+            <aura:if isTrue="{!v.bookingList.length gt 0}">
+                <lightning:accordion >
+                    <aura:iteration items="{!v.bookingList}" var="book">
+                        <lightning:accordionSection name="{!book.Bike__r.Name}" label="{!book.Bike__r.Name}">
+                            <aura:set attribute="body">
+                                <p><b>Booking Name</b> : {!book.Name}</p>
+                                <p><b>Booking Time</b> : {!book.BookingTime__c}</p>
+                                <p><b>Distance KMs</b> : {!book.DistanceKMs__c}</p>
+                                <p><b>Customer Name</b> : {!book.Customer__r.Name}</p>
+                            </aura:set>
+                        </lightning:accordionSection>
+                    </aura:iteration>
+                </lightning:accordion>
+                <aura:set attribute="else">
+                    <p>There are no bookings under this Hub </p> 
+                </aura:set>
+            </aura:if>
+            
+            
+        </div>
+    </lightning:card>
+    
+</aura:component>
