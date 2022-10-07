@@ -9,7 +9,8 @@ public class AnnualRevenueChange {
                 acc.AnnualRevenue = 5000;
             }
         }
-        // make the changes for repo
+        // make the changes for repo 
+        // Welcome to salesforce
         update acclist;
      
     }
