@@ -9,7 +9,7 @@ public class UpdateOpportunityType {
                 opp.Type = 'New Customer';
             }
         }
-        // Retriving from org pull request
+        // Retriving from org pull request for CICD
         update opplist;
      
     }
